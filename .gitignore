@@ -1,0 +1,20 @@
+# Secrets
+.env
+.env.qa
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Pytest / reports
+.pytest_cache/
+reports/
+allure-results/
+*.html
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store

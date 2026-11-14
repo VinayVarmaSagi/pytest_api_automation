@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "users_list.json",
+  "title": "GoRest Users List (v2)",
+  "type": "array",
+  "items": { "$ref": "user.json" }
+}
