@@ -3,6 +3,9 @@ name: Smoke Tests                      # name shown in the Actions tab
 on:                                    # WHEN to run
   push:
     branches: ["**"]                   # every push, to any branch - runs Smoke
+  schedule:
+    - cron: "17 10 * * 0"     # every sunday at 10hour:17minutes UTC ie 02:17PST
+  workflow_dispatch:          # a "Run workflow" button for manual runs
 
 jobs:
   smoke:                               # job id (any name we can provice)
@@ -25,7 +28,7 @@ jobs:
 
       - name: Run smoke tests
         env:
-          TOKEN: ${{ secrets.TOKEN }}   # use our token from CI secrets
+          TOKEN: ${{ secrets.TOKEN }}   # uses our token from CI secrets
         run: pytest -m smoke -v --html=reports/smoke-report.html --self-contained-html
 
       - name: Upload smoke report
