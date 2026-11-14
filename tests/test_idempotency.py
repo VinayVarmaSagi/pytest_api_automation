@@ -10,8 +10,6 @@ from framework.utils.string_utils import generate_random_email, generate_random_
 from framework.validators.response_validator import ResponseValidator
 from framework.config.config import EXISTING_USER
 
-
-@pytest.mark.regression
 def test_get_is_idempotent(api_client):
     get_response_1=api_client.get(f"public/v2/users/{EXISTING_USER}")
     get_response_json_1=get_response_1.json()
@@ -29,8 +27,6 @@ def test_get_is_idempotent(api_client):
     assert get_response_json_1==get_response_json_2
     #calling get twice and comparing response to check if get is idempotent(any no of requests doesnt change the behaviour of the resource)
 
-
-@pytest.mark.regression
 def test_put_is_idempotent(api_client,test_data):
     #builder = RequestBuilder().with_name("vin va").with_status("inactive")
     payload=test_data(name="vin va",status="inactive")
