@@ -6,7 +6,7 @@ on:                                    # WHEN to run
 
 jobs:
   smoke:                               # job id (any name we can provice)
-    runs-on: ubuntu-latest             # a fresh Linux VM GitHub gives us
+    runs-on: ubuntu-24.04             # a fresh Linux VM GitHub gives us
 
     steps:
       - name: Check out code
