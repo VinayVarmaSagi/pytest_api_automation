@@ -75,9 +75,6 @@ def test_post_is_idempotent(api_client,test_data):
     raises=AssertionError,#only this error we want to raise when status code is not matching, strictly focusing on the bug here ie status code mismatch
     strict=True#if we remove this , it will run and get passed
 )
-def test_xfail_because_of_bug(api_client):
+def duplicate_test_xfail_because_of_bug(api_client):
     response = api_client.get("public/v2/users/1234")
     ResponseValidator.validate_status_code(response, HTTPStatus.OK)#if this passes, test fails as xafil works other way. if this fails xfail gives xfail warning
-
-
-

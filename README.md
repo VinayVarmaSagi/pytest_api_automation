@@ -131,4 +131,4 @@ python -m framework.contract.export_schema
 - **Clean up in `finally`** (or fixture teardown) so a failed assertion doesn't leave test users behind in gorest.
 - **Schema registry needs `$schema`:** a JSON file without it raises `CannotDetermineSpecification` for *every* schema test, not just the one using that file.
 - **Pydantic coerces by default:** `"5"` passes as an `int`. Know what your validator accepts.
-- **urllib3 LibreSSL warning** on macOS system Python is harmless for this project.
+- **urllib3 LibreSSL warning** on macOS system Python is harmless for this project.feature line
