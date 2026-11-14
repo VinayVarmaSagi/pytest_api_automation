@@ -63,7 +63,6 @@ def test_negative_auth_invalid_token_rejected(make_client,test_data):
     print("response json is",post_response_json)
     #assert post_response_json["message"] == "Invalid token"
 
-@pytest.mark.regression
 @pytest.mark.security
 @pytest.mark.negative
 @pytest.mark.skipif(not TOKEN, reason="TOKEN env var not set: needs a valid token for the initial 201 call")
