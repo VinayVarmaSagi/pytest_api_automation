@@ -25,5 +25,5 @@ jobs:
 
       - name: Run smoke tests
         env:
-          GOREST_TOKEN: ${{ secrets.GOREST_TOKEN }}   # use our token from CI secrets
+          GOREST_TOKEN: ${{ secrets.TOKEN }}   # use our token from CI secrets
         run: pytest -m smoke -v
