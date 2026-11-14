@@ -1,0 +1,29 @@
+name: Smoke Tests                      # name shown in the Actions tab
+
+on:                                    # WHEN to run
+  push:
+    branches: ["**"]                   # every push, to any branch - runs Smoke
+
+jobs:
+  smoke:                               # job id (any name we can provice)
+    runs-on: ubuntu-latest             # a fresh Linux VM GitHub gives us
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4      # copies our repo onto the VM
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"        # match our local 3.9
+          cache: "pip"                 # reuses downloads → faster later runs
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run smoke tests
+        env:
+          GOREST_TOKEN: ${{ secrets.GOREST_TOKEN }}   # use our token from CI secrets
+        run: pytest -m smoke -v
