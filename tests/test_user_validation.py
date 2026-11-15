@@ -46,3 +46,4 @@ def test_boundary_values_name(name_length, expected_status, expected_message, ap
         assert fields == ["name"], f"unexpected errors: {errors}" # name must be the only failing field, so unrelated errors can't hide - anything other than name comes, it will fail here
         assert expected_message in errors[0]["message"]
 #Adding comment for uncommited changes, stash error
+#adding another commit which is not commited this time
