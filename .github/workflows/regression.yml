@@ -57,4 +57,4 @@ jobs:
               Trigger: ${{ github.event_name }} | Branch: ${{ github.ref_name }}
               Run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
               The HTML report is attached.
-            attachments: reports/regression-report.html
+          attachments: reports/regression-report.html
